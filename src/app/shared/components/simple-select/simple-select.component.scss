@@ -1,0 +1,62 @@
+.backdrop {
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	width:100%;
+	height:100%;
+	background: rgba(0,0,0,0);
+}
+
+div.simple-select { 
+	position: relative;
+	display:inline-block;
+	min-width:80px; 
+
+	.select-items div,.select-selected {
+	  	color: #555555;
+	  	padding: 3px 8px;
+	  	border: 1px solid #c1c1c1;
+	  	background-color:#fff;
+	  	border-color: #c1c1c1 #c1c1c1 rgba(0, 0, 0, 0.1) #c1c1c1;
+	  	cursor: pointer;
+	  	display:flex;
+	}
+
+	.disabled.select-selected {
+		background-color:#e2e2e2;
+	}
+
+	.select-hide {
+	  display: none;
+	}
+
+
+
+	.select-items {
+	  position: absolute;
+	  background-color: #fff;
+	  top: 100%;
+	  left: 0;
+	  right: 0;
+	  z-index: 99;
+	}
+	
+	.select-items div:hover, .same-as-selected {
+	    background-color: rgba(0, 0, 0, 0.15) !important;
+	}
+
+
+	.caret-container {
+		display:flex;
+		align-items:center;
+		margin-left:auto;
+	}
+
+	.caret-container.invert-caret {
+		transform: rotateX(180deg);
+	}
+}
+
+

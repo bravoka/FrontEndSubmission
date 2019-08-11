@@ -1,0 +1,122 @@
+<div class="bg-container">
+
+	<div class="container">
+	
+		<ng-container *ngIf="accountData; else loading">
+	
+			<div class="title-container">
+	
+				<h1 class="title">
+	
+					My Retirement
+	
+				</h1>
+	
+			</div>
+	
+			<div class="manage-container">
+	
+				<div class="manage-header">
+	
+					<div class="manage-header-title">
+	
+						Manage
+	
+					</div>
+	
+					<div class="manage-header-btn">
+	
+						<button outlineBtn>Enquire history</button>
+	
+					</div>
+	
+				</div>
+
+				<hr class="line">
+
+				<div class="manage-body">
+
+					<div>
+
+						<div>
+							
+							Creation date: <span class="value-highlight">{{ accountData.creationDate }}</span>
+						
+						</div>
+						
+						<div>
+						
+							Account number: <span class="value-highlight">{{ accountData.accountNumber }}</span> <button class="btn-right icon" (click)="onChangeAccount()"><i class="fas fa-pencil-alt"></i></button>
+						
+						</div>
+						
+						<div>
+						
+							Charge date: <span class="value-highlight">{{ accountData.chargeDate }}</span><span class="sub-text"> (Next payment date: {{accountData.nextPaymentDate}})</span> <button class="btn-right icon"><i class="fas fa-pencil-alt"></i></button>
+						
+						</div>
+						
+						<div>
+						
+							Status: <span class="value-highlight">{{ accountData.status }}</span> <button class="btn-right" outlineBtn>Suspension of investment</button>
+						
+						</div>
+					
+					</div>
+					
+					<div>
+					
+						<div>
+					
+							Investment amount: <span class="sub-text">{{ accountData.currency }} </span><span class="value-highlight">{{ accountData.monthlyInvestment | currency:undefined:'':'1.0' }}</span><span class="sub-text"> (per month)</span> <button class="btn-right" outlineBtn>Adjust amount</button>
+					
+						</div>
+					
+						<div>
+					
+							Accumulated investment amount: <span class="sub-text">{{ accountData.currency }} </span> <span class="value-highlight">{{ accountData.accumulatedInvestments | currency:undefined:'':'1.0'}}</span>
+						</div>
+						
+						<div>
+						
+							Current market value: <span class="sub-text">{{ accountData.currency }} </span> <span class="value-highlight" >{{ accountData.marketValue | currency:undefined:'':'1.0'}}</span> <button class="btn-right" outlineBtn>Redemption</button>
+						
+						</div>
+						
+						<div>
+							
+						</div>
+					
+					</div>
+
+				</div>
+
+			</div>
+
+			<button primaryBtn style="margin:30px auto; display:block">
+
+				Back to Home
+
+			</button>
+
+		</ng-container>
+
+		<ng-template #loading>
+
+			<div style="display:flex;align-items:center;justify-content: center;height:calc(100vh - 60px)">
+				
+				<div>
+
+					Loading . . .
+
+				</div>
+			
+			</div>
+		
+		</ng-template>
+	
+	</div>
+
+</div>
+
+<ng-template placeholder></ng-template>

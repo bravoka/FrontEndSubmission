@@ -1,0 +1,36 @@
+<div *ngIf="isOpen" class="backdrop" (click)="toggle()"></div>
+
+<div class="simple-select">
+
+	<div class="select-selected" (click)="toggle()" [ngClass]="disabled ? 'disabled' : ''">
+
+		<div>
+
+			{{ model }}
+
+		</div>
+		
+		<div class="caret-container" [ngClass]="isOpen ? 'invert-caret' : ''">
+			
+			<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 width="15px" height="15px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve">
+		
+				<polygon style="fill:#c1c1c1" points="13.25,2.875 7.5,8.625 1.75,2.875 0,4.625 7.5,12.125 15,4.625"/>
+			
+			</svg>
+	
+		</div>
+
+	</div>
+
+	<div class="select-items select-hide" #selectItems>
+		
+		<div *ngFor="let option of options; let i = index" (click)="select(i)" [ngClass]="model === option[valueKey] ? 'same-as-selected' : ''">
+		
+			{{ option[valueKey] }}
+		
+		</div>
+	
+	</div>
+
+</div>

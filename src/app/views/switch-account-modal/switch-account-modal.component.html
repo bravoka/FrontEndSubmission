@@ -1,0 +1,59 @@
+<div class="backdrop" (click)="closeModal()"></div>
+
+<div class="box">
+
+	<ng-container *ngIf="!isLoading; else loading">
+
+		<div style="font-size: 18px">
+
+			Change account number:
+
+		</div>
+
+		<hr class="line">
+
+		<div style="font-size: 16px;margin-bottom: 14px;">
+
+			Please select your debit account number:
+
+		</div>
+
+		<div>
+
+			<simple-select [options]="accountList" valueKey="currency" [disabled]="true" [model]="selected.currency" style="margin-right:6px"></simple-select>
+
+			<simple-select [options]="accountList" valueKey="accountNumber" (selectChange)="onChangeSelected($event)" [model]="selected.accountNumber" style="margin-right:20px"></simple-select>
+			
+			<span> 
+
+				Account balance {{ selected.balance | currency:undefined:'':'1.0' }}
+
+			</span>
+
+		</div>
+
+		<div class="actions">
+
+			<button secondaryBtn (click)="closeModal()">
+
+				Cancel
+
+			</button> 
+
+			<button primaryBtn (click)="onSwitchAccount()">
+
+				Determine
+
+			</button>
+
+		</div>
+
+	</ng-container>
+
+	<ng-template #loading>
+
+		Loading . . .
+		
+	</ng-template>
+
+</div>
