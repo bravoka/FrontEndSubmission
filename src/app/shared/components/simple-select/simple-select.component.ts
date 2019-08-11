@@ -38,6 +38,10 @@ export class SimpleSelectComponent implements OnInit {
   	}
   }
 
+  get dropdownOpen() {
+    return this.isOpen;
+  }
+
   showList():void {
 	  this.renderer.removeClass(this.selectItems.nativeElement, 'select-hide');
 	  this.isOpen = true;

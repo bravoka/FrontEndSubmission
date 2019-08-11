@@ -1,4 +1,4 @@
-<div *ngIf="isOpen" class="backdrop" (click)="toggle()"></div>
+<div *ngIf="dropdownOpen" class="backdrop" (click)="toggle()"></div>
 
 <div class="simple-select">
 
@@ -10,7 +10,7 @@
 
 		</div>
 		
-		<div class="caret-container" [ngClass]="isOpen ? 'invert-caret' : ''">
+		<div class="caret-container" [ngClass]="dropdownOpen ? 'invert-caret' : ''">
 			
 			<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		 width="15px" height="15px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve">
